@@ -1,4 +1,3 @@
-import notfound from '../assets/404-not-found.jpg';
 
 const NotFound = () => {
   return (
@@ -8,7 +7,7 @@ const NotFound = () => {
       marginLeft: "auto",
       marginRight: "auto",
     }}>
-      <img src={notfound} alt='not-found' width="100%" height="60%" />
+      <img src="404-not-found.jpg" alt='not-found' width="100%" height="60%" />
     </div>
   )
 }

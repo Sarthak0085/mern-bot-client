@@ -1,7 +1,6 @@
 import { Box } from '@mui/material'
 import TypingAnimation from '../components/TypingAnimation'
 import Footer from '../components/Footer';
-import chat from "../assets/chat.png";
 
 const Home = () => {
 
@@ -31,7 +30,7 @@ const Home = () => {
         </Box>
         <Box sx={{ display: "flex", width: "100%", mx: "auto" }}>
           <img
-            src={chat}
+            src="chat.PNG"
             alt='chat'
             style={{
             display: "flex",
