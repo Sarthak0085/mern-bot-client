@@ -2,17 +2,10 @@ import { AppBar, Toolbar } from "@mui/material"
 import Logo from "./shared/Logo"
 import { useAuth } from "../context/AuthContext"
 import NavigationLink from "./shared/NavigationLink";
-import { useNavigate } from "react-router-dom";
 
 const Header = () => {
 
   const auth = useAuth();
-  // const navigate = useNavigate();
-
-  const handleLogout = () => {
-    // navigate("/");
-    auth?.logout();
-  }
 
   return (
       <AppBar sx={{ bgcolor: "transparent", position: "static", boxShadow: "none" }}>
