@@ -26,6 +26,8 @@ const Register = () => {
             toast.success("Signed Up Successfully", { id: "register" });
         } catch (error) {
             console.log(error);
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            //@ts-ignore
             toast.error(error.response?.data?.message, {id: "register"});
         }
         

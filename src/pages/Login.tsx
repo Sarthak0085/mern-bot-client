@@ -10,6 +10,7 @@ const Login = () => {
     const auth = useAuth();
     const navigate = useNavigate();
 
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         console.log(e);
         
@@ -29,7 +30,9 @@ const Login = () => {
             toast.success("Signed In Successfully", { id: "login" });
         } catch (error) {
             console.log(error);
-            toast.error(error?.response?.data?.message, { id: "login" });
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            //@ts-ignore
+            toast.error(error.response?.data?.message, { id: "login" });
         }
         
     }

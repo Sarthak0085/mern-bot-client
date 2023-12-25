@@ -85,7 +85,7 @@ const Chat = () => {
       toast.success(data.message, {id:"deletechats"})
     } catch (error) {
       console.log(error)
-      toast.error(error.response?.data?.message, { id: "deletechats" });
+      toast.error(`Error while deleteing the chat : ${error}`, { id: "deletechats" });
     }
   }
 
