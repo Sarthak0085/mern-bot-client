@@ -36,22 +36,22 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         checkStatus();
         }
         
-     }, []);
+     }, [localStorage]);
 
     const login = async (email: string, password: string) => { 
         const data = await loginUser(email, password);
         if (data) {
+             localStorage.setItem('user', JSON.stringify({ email: data.user.email, name: data.user.name }));
             setUser({ email: data.user.email, name: data.user.name });
             setIsLoggedIn(true);
-             localStorage.setItem('user', JSON.stringify({ email: data.user.email, name: data.user.name }));
         }
     };
     const signup = async (name: string, email: string, password: string) => {
         const data = await SignUpUser(name,email, password);
         if (data) {
+            localStorage.setItem('user', JSON.stringify({ email: data.user.email, name: data.user.name }));
             setUser({ email: data.user.email, name: data.user.name });
             setIsLoggedIn(true);
-             localStorage.setItem('user', JSON.stringify({ email: data.user.email, name: data.user.name }));
         }
      };
     const logout = async () => { 
