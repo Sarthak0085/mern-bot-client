@@ -29,7 +29,7 @@ const Login = () => {
             toast.success("Signed In Successfully", { id: "login" });
         } catch (error) {
             console.log(error);
-            toast.error(error.response?.data?.message, { id: "login"});
+            toast.error(error?.response?.data?.message, { id: "login" });
         }
         
     }

@@ -5,7 +5,7 @@ interface Props{
     bg: string;
     text: string;
     textColor: string;
-  onClick?: () => void;
+  onClick?: () => Promise<void>;
 }
 
 const NavigationLink = (props: Props) => {

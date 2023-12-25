@@ -217,7 +217,7 @@ const Chat = () => {
           scrollBehavior: "smooth",
         }}>
           {chatMessages.map((chat, index) => (
-            <ChatItem key={index} content={chat.content} role={chat.role} scroll={scrollToBottom} />
+            <ChatItem key={index} content={chat.content} role={chat.role} />
           ))}
         </Box>
         <div style={{

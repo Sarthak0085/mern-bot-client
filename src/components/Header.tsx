@@ -21,8 +21,8 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <NavigationLink to="/login" bg="#00fffc" text="Login" textColor="black" onClick={auth?.login}/>
-                  <NavigationLink to="/register" bg="#51538f" text="Sign Up" textColor="white" onClick={auth?.signup}/>
+                  <NavigationLink to="/login" bg="#00fffc" text="Login" textColor="black" />
+                  <NavigationLink to="/register" bg="#51538f" text="Sign Up" textColor="white"/>
                 </>
               )
           }
