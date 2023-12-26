@@ -20,7 +20,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-            if (localStorage.getItem('user') ) {
                 // eslint-disable-next-line no-inner-declarations
         async function checkStatus() {
             const data = await checkAuthStatus();
@@ -32,14 +31,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
            }
 
           checkStatus();
-        }
         
      }, []);
 
     const login = async (email: string, password: string) => { 
         const data = await loginUser(email, password);
         if (data) {
-             localStorage.setItem('user', JSON.stringify({ email: data.user.email, name: data.user.name }));
+            //  localStorage.setItem('user', JSON.stringify({ email: data.user.email, name: data.user.name }));
             setUser({ email: data.user.email, name: data.user.name });
             setIsLoggedIn(true);
         }
@@ -47,13 +45,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const signup = async (name: string, email: string, password: string) => {
         const data = await SignUpUser(name,email, password);
         if (data) {
-            localStorage.setItem('user', JSON.stringify({ email: data.user.email, name: data.user.name }));
+            // localStorage.setItem('user', JSON.stringify({ email: data.user.email, name: data.user.name }));
             setUser({ email: data.user.email, name: data.user.name });
             setIsLoggedIn(true);
         }
      };
     const logout = async () => { 
-        localStorage.removeItem('user');
+        // localStorage.removeItem('user');
         setIsLoggedIn(false);
         setUser(null);
         await logoutUser();
