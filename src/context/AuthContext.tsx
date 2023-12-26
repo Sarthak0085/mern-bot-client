@@ -20,7 +20,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => {
             if (localStorage.getItem('user') ) {
                 // eslint-disable-next-line no-inner-declarations
         async function checkStatus() {
@@ -34,7 +33,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
           checkStatus();
         }
-        }, 1000)
         
      }, []);
 
@@ -59,7 +57,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setIsLoggedIn(false);
         setUser(null);
         await logoutUser();
-        
         window.location.reload();
     }
     
