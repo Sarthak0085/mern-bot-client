@@ -72,9 +72,9 @@ const Chat = () => {
 
     const chatData = await sendChatRequest(content);
     setChatMessages([...chatData.chats]);
-    if (chatData) {
+    setTimeout(function() {
       scrollToBottom();
-    }
+    }, 6000)
   }
 
   const handleDeleteChats = async () => {
